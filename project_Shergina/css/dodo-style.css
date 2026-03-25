@@ -1,0 +1,345 @@
+/* css/dodo-style.css */
+:root {
+    --dodo-red: #E31E24;
+    --dodo-red-hover: #C8102E;
+    --dodo-dark: #1A1A1A;
+    --dodo-light-gray: #F8F8F8;
+    --dodo-border-gray: #E0E0E0;
+    --dodo-text: #333333;
+    --dodo-text-light: #757575;
+    --dodo-white: #FFFFFF;
+    --dodo-success: #28A745;
+    --dodo-warning: #FFC107;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--dodo-light-gray);
+    color: var(--dodo-text);
+    line-height: 1.5;
+}
+
+/* Контейнеры */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация в стиле Додо */
+.dodo-navbar {
+    background-color: var(--dodo-red);
+    color: white;
+    padding: 0.75rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.dodo-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dodo-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.dodo-logo span {
+    font-weight: 300;
+    font-size: 1rem;
+    margin-left: 5px;
+    opacity: 0.8;
+}
+.dodo-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.dodo-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: background-color 0.2s;
+}
+.dodo-nav-links a:hover {
+    background-color: rgba(255,255,255,0.15);
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(0,0,0,0.1);
+    padding: 5px 15px 5px 20px;
+    border-radius: 40px;
+}
+.user-name {
+    font-weight: 600;
+}
+.user-role {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+.logout-btn {
+    background-color: var(--dodo-dark);
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+.logout-btn:hover {
+    background-color: #000;
+}
+
+/* Карточки для статистики */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+}
+.stat-card {
+    background: var(--dodo-white);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--dodo-border-gray);
+    text-align: center;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(227, 30, 36, 0.1);
+}
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--dodo-red);
+    line-height: 1.2;
+}
+.stat-label {
+    color: var(--dodo-text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    background-color: var(--dodo-red);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 8px rgba(227, 30, 36, 0.2);
+    border: 1px solid transparent;
+}
+.btn:hover {
+    background-color: var(--dodo-red-hover);
+    transform: scale(1.02);
+}
+.btn:active {
+    transform: scale(0.98);
+}
+.btn-secondary {
+    background-color: var(--dodo-white);
+    color: var(--dodo-dark);
+    border: 1px solid var(--dodo-border-gray);
+    box-shadow: none;
+}
+.btn-secondary:hover {
+    background-color: var(--dodo-light-gray);
+    border-color: var(--dodo-text-light);
+}
+.btn-block {
+    width: 100%;
+}
+.btn-success {
+    background-color: var(--dodo-success);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+}
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Секции */
+.section-card {
+    background: white;
+    border-radius: 32px;
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    border: 1px solid var(--dodo-border-gray);
+}
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--dodo-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.section-title:before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 32px;
+    background-color: var(--dodo-red);
+    border-radius: 4px;
+}
+
+/* Таблицы */
+.dodo-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.dodo-table th {
+    background-color: var(--dodo-light-gray);
+    color: var(--dodo-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 16px 12px;
+    text-align: left;
+    border-bottom: 2px solid var(--dodo-red);
+}
+.dodo-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--dodo-border-gray);
+}
+.dodo-table tr:hover {
+    background-color: rgba(227, 30, 36, 0.02);
+}
+.dodo-table .status-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+}
+.status-badge.confirmed { background-color: #28A745; color: white; }
+.status-badge.pending { background-color: #FFC107; color: #1A1A1A; }
+.status-badge.cancelled { background-color: #6C757D; color: white; }
+.status-badge.paid { background-color: #28A745; color: white; }
+.status-badge.new { background-color: #17A2B8; color: white; }
+
+/* Формы */
+.dodo-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form-group {
+    margin-bottom: 24px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dodo-dark);
+    font-size: 1rem;
+}
+.form-control {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid var(--dodo-border-gray);
+    border-radius: 60px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    background-color: white;
+}
+.form-control:focus {
+    outline: none;
+    border-color: var(--dodo-red);
+    box-shadow: 0 0 0 3px rgba(227, 30, 36, 0.1);
+}
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+}
+
+/* Заголовки страниц */
+.page-header {
+    background: linear-gradient(135deg, var(--dodo-red) 0%, #C8102E 100%);
+    color: white;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    border-radius: 0 0 40px 40px;
+}
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.page-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Стили для дашборда */
+.quick-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+.action-btn {
+    flex: 1 1 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+    background: white;
+    border-radius: 28px;
+    border: 1px solid var(--dodo-border-gray);
+    text-decoration: none;
+    color: var(--dodo-dark);
+    transition: all 0.2s;
+    font-weight: 600;
+}
+.action-btn:hover {
+    border-color: var(--dodo-red);
+    box-shadow: 0 8px 16px rgba(227, 30, 36, 0.1);
+    transform: translateY(-3px);
+}
+.action-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
